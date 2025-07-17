@@ -19,8 +19,12 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.4.1"
+allure-pytest = "^2.14.3"
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
-addopts = "--tb=short"
 testpaths = ["tests"]
+addopts = [
+    "--alluredir", "allure-results",
+    "--tb=short"
+]
